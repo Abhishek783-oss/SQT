@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Squirrels Tree Service</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+	
+	
+    /* #contact-form {
+    /*    width:30%;*/
+  
+    #contact-form h1 {
+      font-size:42px;
+    }
+    #contact-form h2 {
+      margin-bottom:15px;
+      font-style:italic;
+      font-weight:normal;
+    }
+    #contact-form input,
+    #contact-form select,
+    #contact-form textarea,
+    #contact-form label {
+      font-size:15px;
+      margin-bottom:2px;
+    }
+    #contact-form input,
+    #contact-form select,
+    #contact-form textarea {
+      width: 100%;
+      border: 1px solid #656565;
+      margin-bottom:20px;
+      padding:10px;
+      border-radius: 3px;
+      box-sizing: border-box;
+      transition-duration: 300ms;
+    }
+    #contact-form input:focus,
+    #contact-form select:focus,
+    #contact-form textarea:focus {
+      box-shadow: 0 0 0 3px #00466fe3;
+      outline: none;
+    }
+    #contact-form textarea {
+      height:150px;
+      resize: none;
+    }
+    #contact-form label {
+      display:block;
+    }
+    #contact-form .required {
+      font-weight:bold;
+      color:#F00;
+    }
+    #contact-form textarea {
+      display:block;
+    }
+    #contact-form #submit-button {
+      background-color:#333;
+      color: white;
+      border:none;
+      background-color:#f23a1a;
+      -moz-border-radius:8px;
+    }
+    #contact-form #submit-button:hover {
+      background-color: #00466f;
+    }
+    #contact-form #submit-button:active {
+      position:relative;
+      top:1px;
+    }
+    #contact-form #loading {
+      width:32px;
+      height:32px;
+      background-image:url( "images/form/loading.gif");
+      display:block;
+      position:absolute;
+      right:130px;
+      bottom:16px;
+      display:none;
+    }
+    #errors {
+      border:solid 1px #E58E8E;
+      padding:10px;
+      margin:25px 0px;
+      display:block;
+      width:437px;
+      -webkit-border-radius:8px;
+      -moz-border-radius:8px;
+      border-radius:8px;
+      background:#FFE6E6 url( "images/form/cancel_48.png") no-repeat 405px center;
+      display:none;
+    }
+    #errors li {
+      padding:2px;
+      list-style:none;
+    }
+    #errors li:before {
+      content: ' - ';
+    }
+    #errors #info {
+      font-weight:bold;
+    }
+    #errors #info:before {
+      content: '';
+    }
+    #success {
+      border:solid 1px #83D186;
+      padding:25px 10px;
+      margin:25px 0px;
+      display:block;
+      width:437px;
+      -webkit-border-radius:8px;
+      -moz-border-radius:8px;
+      border-radius:8px;
+      background:#D3EDD3 url( "images/form/accepted_48.png") no-repeat 405px center;
+      font-weight:bold;
+      display:none;
+    }
+    #errors.visible, #success.visible {
+      display:block;
+    }
+    #req-field-desc {
+      font-style:italic;
+    }
+    /* Remove box shadow firefox, chrome and opera put around required fields. It looks rubbish. */
+    input:required, textarea:required {
+      -moz-box-shadow:none;
+      -webkit-box-shadow:none;
+      -o-box-shadow:none;
+      box-shadow:none;
+    }
+    /* Normalize placeholder styles */
+    /* chrome, safari */
+    ::-webkit-input-placeholder {
+      color:#CCC;
+      font-style:italic;
+    }
+    /* mozilla */
+    input:-moz-placeholder, textarea:-moz-placeholder {
+      color:#CCC;
+      font-style:italic;
+    }
+    /* ie (faux placeholder) */
+    input.placeholder-text, textarea.placeholder-text  {
+      color:#CCC;
+      font-style:italic;
+    }
+    .ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+    .hidden { display: none; visibility: hidden; }
+    .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+    .visuallyhidden.focusable:active,
+    .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+    .invisible { visibility: hidden; }
+    .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+    .clearfix:after { clear: both; }
+    .clearfix { zoom: 1; }
+    @media all and (orientation:portrait) {
+    }
+    @media all and (orientation:landscape) {
+    }
+    @media screen and (max-device-width: 480px) {
+      /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+    }
+    @media print {
+      * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+      -ms-filter: none !important; }
+      a, a:visited { color: #444 !important; text-decoration: underline; }
+      a[href]:after { content: " (" attr(href) ")"; }
+      abbr[title]:after { content: " (" attr(title) ")"; }
+      .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+      pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+      thead { display: table-header-group; }
+      tr, img { page-break-inside: avoid; }
+      @page { margin: 0.5cm; }
+      p, h2, h3 { orphans: 3; widows: 3; }
+      h2, h3{ page-break-after: avoid; }
+    }	
+       */
+      /* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.navbar {
+  background-color: #034203b0; /* Change to your preferred background color */
+  padding: 20px 30px;
+  margin: 0 200px;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.navbar-toggler {
+  border-color: #fff; /* Color of the button border */
+}
+
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%23fff" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%280, 0, 0, 0.5%29" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E'); /* Custom icon color */
+}
+.navbar-nav{
+  padding-left:200px;
+}
+/* Style for the navbar items */
+.navbar-nav .nav-link {
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 25px;
+  text-transform: capitalize;
+  transition: color 0.8s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f2f2f2;
+}
+
+.navbar-nav .nav-link.active {
+  font-weight: bold;
+  color: #fff;
+  /* background-color: #26c32bce; Active link background color */
+  border-radius: 5px;
+}
+
+/* Responsive styling */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #4CAF50; /* Collapsed menu background color */
+    padding: 10px 15px;
+  }
+
+  .navbar-nav {
+    margin-top: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px;
+    text-align: center;
+    width: 100%; /* Full width in mobile view */
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 16px;
+  }
+}
+
+
+.section-title .container1{
+  height:150px;
+  background-color: whitesmoke;
+}
+.section-title .container1 h3{
+  color:black;
+  padding:60px 225px;
+}
+/* Contact Section */
+.section-md {
+    padding: 60px 0;
+}
+
+.bg-default {
+    background-color: #f9f9f9;
+}
+
+
+
+.contact-info {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 15px;
+}
+
+.list-terms-inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-semicolon {
+    list-style-type: none;
+    padding: 0;
+}
+.list-inline-sm {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+.icon-sm {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #333;
+}
+#contact-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #58d65e; /* Darker green */
+}
+
+.required {
+    color: red;
+}
+.box-counter {
+    text-align: center;
+    padding: 20px;
+    background: rgba(20, 93, 78, 0.7);
+    border-radius: 8px;
+    color: #fff;
+}
+
+.box-counter__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.counter {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Google Map */
+iframe {
+    border: skyblue;
+}
+
+    </style>			
+    
+</head>
+<body>
+  <nav id="top-navbar" class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <img src="images/logo-344x67.png" height="50">
+      <a class="navbar-brand" href="#">Squirrels Tree Service</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About-US</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Our Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Portfolio</a>
+          </li>
+          <li class="nav-item"></li>
+            <a class="nav-link" href="contacts.html">Contacts</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="section-title">   
+          <div class="container1">              
+                <h3>24/7 emergency tree services available! Contact us for immediate assistance.</h3>            
+          </div>
+  </section>
+<section class="section-md">
+    <div class="container" style="margin-left: 300px;">
+      <div class="row">
+        <div class="col-lg-3">
+          <h4 class="heading-decorated">Contact Details</h4>
+          <ul class="list-sm contact-info">
+            <li>
+              <strong>Address: </strong>Rd Zion, IL 60099 EE. UU
+            </li>
+            <li>
+              <strong>Phones: </strong><a href="tel:+18472193246">(847) 219-3246</a>
+            </li>
+            <li>
+              <strong>Opening Hours: </strong>Monday to Saturday<br><span>           7am to 9pm</span>
+            </li>         
+          </ul>
+        </div>
+        <div class="col-lg-6 d-flex justify-content-center">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d60783.56978891884!2d-87.89341460278835!3d42.461743121016696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sRd%20Zion%2C%20IL%2060099!5e0!3m2!1sen!2sus!4v1728335699435!5m2!1sen!2sus" width="250" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      </div>
+      </section>
+      <section class="form">
+        <div>
+           
+          <h4 class="heading-decorated" style="margin-left:100px;">FILL OUT THE FOLLOWING FORM</h4>
+  <div id="contact-form">
+<h1 style="color: green; font-size:2rem; margin-left:100px;" text-align="center">GET IN CONTACT WITH US!</h1>
+<p style="color: green; margin-left:100px;">Fill out the contact form below to get in touch with us! Please provide as much information as possible so we can assist you with your inquiry</p>
+<ul id="errors" class="">
+    <li id="info">There were some problems with your form submission:</li>
+</ul>
+<p id="success">Thanks for your message! We will get back to you ASAP!</p>
+<form method="post" action="process.php" style="margin-left:100px;">
+    <label for="name" style="color: green">Name: <span class="required">*</span></label>
+    <input type="text" id="name" style="width:75%" name="name" value="" placeholder="Enter full name" required="required"/>
+    <label for="email" style="color: green">Email Address: <span class="required">*</span></label>
+    <input type="email" id="email" name="email" style="width:75%" value="" placeholder="user@email.com" required="required" />
+    <label for="telephone" style="color: green">Telephone: </label>
+    <input type="tel" id="telephone" name="telephone" style="width:75%" value="" />
+    <label for="message" style="color: green">Message: <span class="required">*</span></label>
+    <textarea id="message" name="message" style="width:75%" placeholder="Your message must be greater than 10 charcters" required="required" data-minlength="20"></textarea>
+    <span id="loading"></span>
+    <input type="submit" style="width:75%" value="Send Message" id="submit-button" />
+    <p id="req-field-desc" style="color: green"><span class="required">*</span> indicates a required field</p>
+</form>
+
+				
+				
+            </div>
+          </div>
+      </section>
+      <section class="section parallax-container context-dark">
+        <div class="parallax-content">
+          <div class="container section-md">
+            <div class="row justify-content-md-center">
+              <div class="col-md-6 col-lg-3">
+                <!-- Box counter-->
+                <article class="box-counter">
+                  <i class="fa fa-leaf" style="font-size:36px; color: white" ></i>
+                  <div class="box-counter__wrap">
+                    <div class="counter">100</div><span>%</span>
+                  </div>
+                  <p class="box-counter__title">Responsibility</p>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <!-- Box counter-->
+                <article class="box-counter">
+                  <i class="fa fa-trophy" style="font-size:36px; color: white" ></i>
+                  <div class="box-counter__wrap">
+                    <div class="counter">100</div><span>%</span>
+                  </div>
+                  <p class="box-counter__title">Commitment</p>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <!-- Box counter-->
+                <article class="box-counter">
+                  <i class="fa fa-star" style="font-size:36px; color: white" ></i>
+                  <div class="box-counter__wrap">
+                    <div class="counter">100</div><span>%</span>
+                  </div>
+                  <p class="box-counter__title">Honesty</p>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <!-- Box counter-->
+                <article class="box-counter">
+                  <i class="fa fa-shield" style="font-size:36px; color: white" ></i>
+                  <div class="box-counter__wrap">
+                    <div class="counter">100</div><span>%</span>
+                  </div>
+                  <p class="box-counter__title">Security</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+		</body>
+    </html>
+		
+		
+      
+  
+      
+      
